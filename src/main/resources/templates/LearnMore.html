@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.com">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/e5ac099b42.js" crossorigin="anonymous"></script>
+</head>
+<body class="d-flex h-100 text-lg-start text-white bg-secondary">
+<div class="container-fluid d-flex w-100 h-200 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+        <div>
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-dark w-auto h-auto">
+                <h3 class="float-md-start mb-0"><img th:src="@{/images/Logo.png}" style="width:70px;height:70px;"></h3>
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="btn btn-outline-info">
+                                <a class="nav-link active text-white" aria-current="page" href="home"><i
+                                        class="fa-solid fa-house-user"></i> Home</a>
+                            </li>
+                            <li class="btn btn-outline-info">
+                                <a class="nav-link text-white" href="available_book"><i
+                                        class="fa-solid fa-book-open"></i> All Books</a>
+                            </li>
+                            <li class="btn btn-outline-info">
+                                <a class="nav-link text-white" href="my_books"><i class="fa-solid fa-book-bookmark"></i>
+                                    Booked Books</a>
+                            </li>
+                            <li class="btn btn-outline-info">
+                                <a class="nav-link text-white" href="book_register"><i
+                                        class="fa-regular fa-registered"></i> Register New Book</a>
+                            </li>
+
+                        </ul>
+                        <form class="d-flex" th:action="@{/search}" method="get">
+                            <input class="form-control me-2" type="search" placeholder="Search books"
+                                   aria-label="Search" id="textSearch" name="searchInput" th:value="${searchInput}"
+                                   required>
+                            <button class="btn btn-outline-info text-white" type="submit"><i
+                                    class="fa-solid fa-magnifying-glass"></i> Search
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <background>
+            <div class="snippet-container text-center m-5">
+                <h3 class="title text-danger ">Introduction</h3>
+                <p>In today's world, libraries have become a hub for knowledge and information. With the advancement of
+                    technology, it has become crucial for libraries to adopt automated systems that can effectively
+                    manage their vast collection of books and other materials. One such software that is designed
+                    specifically for libraries is a library management system (LMS). An LMS helps libraries manage their
+                    day-to-day operations and provides them with a centralized database to store and access information
+                    about their books. In this essay, we will discuss a software that handles library books and adds
+                    information on those books if they are purchased in a database.</p>
+                <h6>
+                    <img src="/images/LogoOnly.png" class="img-fluid" width="360px"/>
+                </h6>
+            </div>
+            <div>
+                <h3 class="title text-danger">Features of the software</h3><br>
+                <p>
+                <ul>
+                    <li>
+                        The software should have a user-friendly interface that allows library staff to easily add new
+                        books to the database and retrieve information about existing books. The software should also
+                        provide library staff with the ability to track the circulation of books, including who has
+                        checked out a book, when it is due, and whether or not it has been returned.
+                    </li>
+                    <br>
+
+                    <li>
+                        One of the critical features of the software is the ability to manage the library's collection
+                        of books. The software should provide library staff with the ability to categorize books based
+                        on different criteria, such as author, title, publication date, and genre. This information can
+                        then be used to generate reports and statistics about the library's collection.
+                    </li>
+                    <br>
+                    <li>
+                        Another important feature of the software is the ability to manage the library's finances. The
+                        software should be able to track the cost of purchasing books, as well as the revenue generated
+                        from book rentals. This information can be used to make informed decisions about the library's
+                        budget and to identify areas where cost-saving measures can be implemented.
+                    </li>
+                    <br>
+                    <li>If the library purchases new books, the software should have the capability to add the
+                        information on those books to the database. This information can include the title, author,
+                        publication date, ISBN number, and cover image, among others. The software should also allow
+                        library staff to add any relevant notes or comments about the book, such as whether it is a
+                        best-seller or if it has received positive reviews.
+                    </li>
+                    <br>
+                </ul>
+                </p>
+            </div>
+            <div>
+                <h3 class="title text-danger">How It Works</h3><br>
+                <p>Here we can see how this app actually works and how can a single librarian maintain in and out of the library</p>
+                <h6><img src="/images/RoleChart.PNG" style="width: 500px"/></h6><br>
+                <h4 class="sub-title mb-5 text-danger" >Steps</h4>
+                <ul>
+                    <li>
+                        First the Library using this application must input Data into DataBase which is the most rigorous work in all this process
+                    </li>
+                    <li>
+                        After Database has been implemented the librarian can use Search functionality for searching any books available on behalf of the customer
+                    </li>
+                    <li>
+                        After the book has been sold the librarian can move that book to the BookedBook Database where the librarian must fill all the forms related to information of the buyer for future references
+                    </li>
+                    <li>
+                        Finally the process is completed for storing and editing information on Book available in the Library
+                    </li>
+                </ul>
+
+            </div>
+            <div>
+                <h3 class="title text-danger">Conclusion</h3><br>
+                <p style="text-autospace: punctuation ">In conclusion, a software that handles library books and adds
+                    information on those books if they are purchased in a database is a crucial tool for libraries in
+                    the digital age. The software provides libraries with the ability to efficiently manage their
+                    collection of books, track the circulation of books, and manage their finances. By automating these
+                    processes, libraries can save time and resources while providing their patrons with the best
+                    possible service. As technology continues to evolve, it is likely that library management systems
+                    will continue to play an important role in the operation of libraries worldwide.</p>
+
+            </div>
+            <li class="btn btn-outline-info">
+                <a class="nav-link text-white" href="SignUpPage"><i class="fa-solid fa-right-to-bracket"></i> Sign
+                    Up</a>
+            </li>
+            <li class="btn btn-outline-info">
+                <a class="nav-link text-white" href="/login"><i class="fa-regular fa-user"></i> Log In</a>
+            </li>
+            <h1>Library Book Management</h1>
+            <p class="lead">This platform is based designed for physical library for managing and formatting books
+                available for
+                the customer and requesting books to be added to the List based on customer request</p>
+            <p class="lead">
+                <a href="#" class="btn btn-outline-info text-light"><i class="fa-brands fa-leanpub"></i> Learn more</a>
+            </p>
+        </background>
+
+    </main>
+
+    <footer class="align-content-lg-stretch text-white-50 ">
+        <blockquote>
+            <div class="row mb-3">
+                <div class="row-md-6">
+                    <div class="row g-0 border-primary overflow-hidden flex-md-row mb-4 shadow-lg h-md-250 position-relative bg-dark">
+                        <div class="col p-4 d-flex flex-column position-relative">
+                            <h2 class="mb-0 text-center text-white">ABOUT US</h2><br>
+                            <p><a class="mb-auto btn btn-outline-info text-white w-100" href="#"><i
+                                    class="fa-solid fa-person-digging"></i> Our Work</a></p><br>
+                            <p><a class="mb-auto btn btn-outline-info text-white w-100" href="#"><i
+                                    class="fa-solid fa-bullseye"></i> Our Object</a></p><br>
+                            <p><a class="mb-auto btn btn-outline-info text-white w-100" href="#"><i
+                                    class="fa-brands fa-algolia"></i> Our Goal</a></p><br>
+                        </div>
+                        <div class="col p-4 d-flex flex-column position-relative">
+                            <h2 class="mb-0 text-center text-white">COMPANY</h2><br>
+                            <p><a class="mb-auto btn btn-outline-info text-white w-100" href="#"><i
+                                    class="fa-solid fa-address-book"></i> Contact</a></p><br>
+                            <p><a class="mb-auto btn btn-outline-info text-white w-100" href="#"><i
+                                    class="fa-solid fa-briefcase"></i> Careers</a></p><br>
+                            <p><a class="mb-auto btn btn-outline-info text-white w-100" href="#"><i
+                                    class="fa-regular fa-newspaper"></i> News</a></p><br>
+                        </div>
+                        <div class="col p-4 d-flex flex-column position-relative">
+                            <h2 class="mb-0 text-center text-white">POLICIES</h2><br>
+                            <p><a class="mb-auto btn btn-outline-info text-white w-100" href="#"><i
+                                    class="fa-solid fa-building-shield"></i> Privacy Policy</a></p>
+                            <br>
+                            <p><a class="mb-auto btn btn-outline-info text-white w-100" href="#"><i
+                                    class="fa-solid fa-head-side-cough"></i> Terms Of Services</a>
+                            </p><br>
+                            <p><a class="mb-auto btn btn-outline-info text-white w-100" href="#"><i
+                                    class="fa-solid fa-handshake-simple"></i> Third Party
+                                Services</a></p><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </blockquote>
+
+
+    </footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
